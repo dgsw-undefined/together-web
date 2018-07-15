@@ -1,6 +1,17 @@
-### 같이가치
-## undefined
+# 같이가치 by Undefined
+---
+## run
 
+install **dependencies**
 
-# run 'yarn' to install dependencies.
-# then run 'yarn start' to view
+```c
+$ yarn
+```
+
+run
+
+```c
+$ yarn start
+```
+
+h1
