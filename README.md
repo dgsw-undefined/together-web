@@ -4,12 +4,12 @@
 
 install **dependencies**
 
-```
+```c
 $ yarn
 ```
 
 run
 
-```
+```c
 $ yarn start
 ```
