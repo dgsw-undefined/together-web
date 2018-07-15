@@ -1,5 +1,5 @@
 # 같이가치 by Undefined
----
+
 ## run
 
 install **dependencies**
@@ -13,5 +13,3 @@ run
 ```c
 $ yarn start
 ```
-
-h1
