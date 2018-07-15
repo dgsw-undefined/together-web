@@ -11,6 +11,7 @@ $ yarn
 $ yarn start
 ```
 
+<<<<<<< HEAD
 ## create-react-app + mobx + styled-components
 * create project
 ```c
@@ -22,6 +23,10 @@ $ cd myApp
 ```c
 $ yarn add mobx mobx-react styled-components
 $ yarn add --dev react-app-rewired react-app-rewire-mobx
+=======
+```c
+$ yarn
+>>>>>>> 98a353751dfb21125b666d34bd3a09901a04d8a6
 ```
 
 * create **config-overrides.js** in project root folder
@@ -29,6 +34,7 @@ $ yarn add --dev react-app-rewired react-app-rewire-mobx
 const { injectBabelPlugin } = require('react-app-rewired');
 const rewireMobX = require('react-app-rewire-mobx');
 
+<<<<<<< HEAD
 module.exports = function override(config, env) {
   config = injectBabelPlugin("babel-plugin-styled-components", config);
   config = rewireMobX(config, env);
@@ -61,4 +67,8 @@ $ yarn add --dev cros-env
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+=======
+```c
+$ yarn start
+>>>>>>> 98a353751dfb21125b666d34bd3a09901a04d8a6
 ```
