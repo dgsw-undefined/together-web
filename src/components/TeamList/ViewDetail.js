@@ -2,10 +2,10 @@ import React from 'react';
 import styled from "styled-components";
 
 const ViewDetail = props => {
-
+  
   let create_date = new Date(props.team.create_date);
   let destroy_date = new Date(props.team.destroy_date);
-
+  
   return (
     <Container onClick={() => props.hideDetail(false)}>
       <div>{props.team.id}</div>
@@ -28,11 +28,10 @@ const Container = styled.div`
   left: 0; top: 0; right:0; bottom: 0;
   background-color: rgba(0,0,0,0.8);
   padding: 1rem;
-
-  animation: fadeIn 0.5s;
-  @keyframes fadeIn {
-    from { opacity : 0; }
-    to   { opacity : 1; }
+  animation: fade-in .5s;
+  @keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
   }
 `;
 

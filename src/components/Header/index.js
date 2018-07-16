@@ -17,6 +17,7 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-contents: center;
   align-items: center;
+  z-index: 99999;
 `;
 
 const Logo = styled.img`

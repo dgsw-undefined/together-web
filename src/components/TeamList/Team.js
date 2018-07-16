@@ -32,7 +32,6 @@ class Team extends Component {
 
 const Container = styled.div`
   width: 20rem;
-  height: 10rem;
   border-radius: 1rem;
   border: 1px solid gray;
   background-color: #000000aa;
@@ -42,6 +41,10 @@ const Container = styled.div`
   display: inline-block;
   backdrop-filter: blur(100px);
   -webkit-backdrop-filter: blur(100px);
+  
+  @media (max-width: 600px) {
+    width: calc(100% - 2rem);
+  }
 `;
 
 const Header = styled.div`

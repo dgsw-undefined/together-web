@@ -23,6 +23,7 @@ class TeamList extends Component {
 
 const TeamListContainer = styled.div`
   padding: 1rem .5rem;
+  position: absolute;
 `;
 
 export default TeamList;
