@@ -16,6 +16,7 @@ class App extends Component {
     return (
       <Provider store={stores}>
         <AppContainer>
+          <BlurBG/>
           <Header/>
           <TeamList/>
         </AppContainer>
@@ -26,6 +27,17 @@ class App extends Component {
 
 const AppContainer = styled.div`
   height: calc(100vh - 5rem);
+`;
+
+const BlurBG = styled.div`
+  position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  filter: blur(10px);
+  background-image: url(${MainBackground});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 `;
 
 injectGlobal`
@@ -39,11 +51,6 @@ injectGlobal`
     margin: 0;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 12pt;
-    background-image: url(${MainBackground});
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
   }
   
   body {
