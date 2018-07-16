@@ -8,6 +8,7 @@ import MainBackground from 'img/main_bg.png';
 import {
   Header,
   TeamList,
+  Login,
 } from 'components';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
       <Provider store={stores}>
         <AppContainer>
           <Header/>
+          <Login/>
           <TeamList/>
         </AppContainer>
       </Provider>
