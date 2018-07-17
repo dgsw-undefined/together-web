@@ -4,13 +4,13 @@
 
 * install **dependencies**
 
-```c
+```bash
 $ yarn
 ```
 
 * run
 
-```c
+```bash
 $ yarn start
 ```
 
@@ -18,21 +18,21 @@ $ yarn start
 
 * create project
 
-```c
+```bash
 $ create-react-app myApp
 $ cd myApp
 ```
 
 * add dependencies
 
-```c
+```bash
 $ yarn add mobx mobx-react styled-components
 $ yarn add --dev react-app-rewired react-app-rewire-mobx
 ```
 
 * create **config-overrides.js** in project root folder
 
-```c
+```javascript
 const { injectBabelPlugin } = require('react-app-rewired');
 const rewireMobX = require('react-app-rewire-mobx');
 
@@ -48,7 +48,7 @@ module.exports = function override(config, env) {
 
 > changed react-scripts to react-app-rewired
 
-```c
+```javascript
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
@@ -59,7 +59,7 @@ module.exports = function override(config, env) {
 
 ## import my components simply
 
-```c
+```bash
 $ yarn add --dev cros-env
 ```
 
@@ -67,7 +67,7 @@ $ yarn add --dev cros-env
 
 > add **cross-env NODE_PATH=src**
 
-```c
+```javascript
   "scripts": {
     "start": "cross-env NODE_PATH=src react-app-rewired start",
     "build": "cross-env NODE_PATH=src react-app-rewired build",

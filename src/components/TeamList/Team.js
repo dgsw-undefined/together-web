@@ -58,6 +58,7 @@ const Button = styled.button`
   float: right;
   padding: .4rem;
   outline: none;
+  border-radius: .5rem;
 
   &:active {
     outline: none;

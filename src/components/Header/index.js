@@ -3,11 +3,12 @@ import styled from 'styled-components';
 
 import logo from 'img/undefined_logo.png';
 
-const Header = () =>
-<HeaderContainer>
-  <Logo src={logo} />
-  <Title>같이가치 by Undefined</Title>
-</HeaderContainer>;
+const Header = () => (
+  <HeaderContainer>
+    <Logo src={logo}/>
+    <Title>같이가치 by Undefined</Title>
+  </HeaderContainer>
+);
 
 const HeaderContainer = styled.div`
   background-color: rgba(0,0,0,.5);

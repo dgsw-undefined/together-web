@@ -41,6 +41,9 @@ const BlurBG = styled.div`
 `;
 
 injectGlobal`
+  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+  @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
   * {
     color : white;
     text-shadow : 0 0 5px black;
@@ -51,6 +54,7 @@ injectGlobal`
     margin: 0;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 12pt;
+    background-color: #000000;
   }
   
   body {
