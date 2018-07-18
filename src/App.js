@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'mobx-react';
 import styled, { injectGlobal } from 'styled-components';
-
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import stores from 'stores';
 import MainBackground from 'img/main_bg.png';
 
@@ -9,20 +9,25 @@ import {
   Header,
   TeamList,
   Login,
+  UserList,
 } from 'components';
 
 class App extends Component {
   render () {
     
     return (
-      <Provider store={stores}>
+      <Router>
+      <Provider store={stores}> 
         <AppContainer>
           <BlurBG/>
           <Header/>
-          <Login/>
-          <TeamList/>
+           {/*<Login/>*/}
+          <Route exact path="/" component={TeamList}/>
+          <Route path="/user" component={UserList}/>
         </AppContainer>
       </Provider>
+     
+      </Router>
     );
   }
 }
@@ -45,7 +50,6 @@ const BlurBG = styled.div`
 injectGlobal`
   * {
     color : white;
-    text-shadow : 0 0 5px black;
   }
   
   html, body {
