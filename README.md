@@ -95,7 +95,7 @@ module.exports = function override(config, env) {
 
 > changed react-scripts to react-app-rewired
 
-```javascript
+```json
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
@@ -114,7 +114,7 @@ $ yarn add --dev cros-env
 
 > add **cross-env NODE_PATH=src**
 
-```javascript
+```json
   "scripts": {
     "start": "cross-env NODE_PATH=src react-app-rewired start",
     "build": "cross-env NODE_PATH=src react-app-rewired build",
