@@ -14,6 +14,53 @@ $ yarn
 $ yarn start
 ```
 
+## nginx setup for ReactRouter
+
+> /etc/nginx/sites-enabled/default
+> 
+> try_files $uri /index.html; # 모든 요청을 index.html 로 보냄 
+
+```nginx
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /opt/www;
+
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name undefined.narsha;
+	client_max_body_size 100M;
+
+	location / {
+		try_files $uri /index.html; # 모든 요청을 index.html 로 보냄
+	}
+
+	location /node/ {
+		rewrite ^/node(/.*)$ $1 break;
+		proxy_pass http://node_server;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_redirect off;
+	}
+
+	location /go/ {
+		rewrite ^/go(/.*)$ $1 break;
+		proxy_pass http://go_server;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_redirect off;
+	}
+
+}
+
+upstream node_server {
+	server 127.0.0.1:8080;
+}
+
+upstream go_server {
+	server 127.0.0.1:8081;
+}
+```
+
 ## create-react-app + mobx + styled-components
 
 * create project
