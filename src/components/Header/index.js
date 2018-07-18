@@ -2,13 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import logo from 'img/undefined_logo.png';
-
-const Header = () => (
-  <HeaderContainer>
-    <Logo src={logo}/>
-    <Title>같이가치 by Undefined</Title>
-  </HeaderContainer>
-);
+const Header = () =>
+<HeaderContainer>
+  <Logo src={logo} />
+  <Title>같이가치 for Admin</Title>
+  {/*<Login>로그인</Login>*/}
+</HeaderContainer>;
 
 const HeaderContainer = styled.div`
   background-color: rgba(0,0,0,.5);
@@ -19,6 +18,9 @@ const HeaderContainer = styled.div`
   justify-contents: center;
   align-items: center;
   z-index: 99999;
+`;
+const Login=styled.div`
+  margin-left:93rem;
 `;
 
 const Logo = styled.img`
