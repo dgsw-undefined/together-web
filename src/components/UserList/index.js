@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
 import styled from 'styled-components';
 import { inject, observer } from 'mobx-react';
 
@@ -14,17 +14,13 @@ class UserList extends Component {
   
   render() {
     return (
-      <UserListContainer>
+      <Fragment>
         {console.log(this.props)}
         {this.props.store.State.userList && this.props.store.State.userList.map(user => <User key={user.idx} user={user} />)}
-      </UserListContainer>
+      </Fragment>
     );
   }
 }
 
-const UserListContainer = styled.div`
-  padding: 1rem .5rem;
-  position: absolute;
-`;
 
 export default UserList;

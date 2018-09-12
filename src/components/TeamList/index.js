@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
 import styled from 'styled-components';
 import { inject, observer } from 'mobx-react';
 
@@ -14,16 +14,11 @@ class TeamList extends Component {
   
   render() {
     return (
-      <TeamListContainer>
+      <Fragment>
         {this.props.store.State.teamList && this.props.store.State.teamList.map(team => <Team key={team.id} team={team} />)}
-      </TeamListContainer>
+        </Fragment>
     );
   }
 }
-
-const TeamListContainer = styled.div`
-  padding: 1rem .5rem;
-  position: absolute;
-`;
 
 export default TeamList;

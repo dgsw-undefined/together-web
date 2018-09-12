@@ -46,11 +46,12 @@ class ViewDetail extends React.Component {
       <Container onClick={() => this.props.hideDetail(false)}>
         <Wapper>
           <Teamname>{this.props.team.name}</Teamname>
-          <div>주제 : {this.props.team.subject}</div>
-          <div>분야 : {this.props.team.area}</div>
-          <div>{this.props.team.docs}</div>
-          <div>시작 일자 : {create_date.toLocaleString()}</div>
+          <div>주제 : {this.props.team.subject}<br/></div>
+          <div>분야 : {this.props.team.area}<br/></div>
+          <div>{this.props.team.docs}<br/></div>
+          <div>시작 일자 : {create_date.toLocaleString()}<br/></div>
           <TeamMemberTitle>팀 멤버 목록</TeamMemberTitle>
+          <br/>
           {
             this.props.team_member.map((e) =>
                                          <MemberList key={e.id}>
@@ -110,6 +111,7 @@ const Teamname = styled.h1`
 `
 
 const TeamMemberTitle = styled.h1`
+  text-align:center;
   font.size:2rem;
 `
 const MemberList = styled.div`

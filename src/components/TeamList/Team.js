@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component,Fragment } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import ViewDetail from './ViewDetail';
+import { faSearch, faSearchPlus } from '@fortawesome/free-solid-svg-icons';
 
 class Team extends Component {
   constructor (props) {
@@ -17,52 +18,34 @@ class Team extends Component {
     let create_date = new Date(this.props.team.team.create_date);
     
     return (
-      <Container>
-        <Header>{this.props.team.team.name}</Header>
-        <div>주제 : {this.props.team.team.subject}</div>
-        <div>분야 : {this.props.team.team.area}</div>
-        <div>팀원 : {this.props.team.team.member_count} 명</div>
-        <div>시작 : {create_date.getFullYear()}년 {create_date.getMonth() + 1}월 {create_date.getDate()}일</div>
-        <Button onClick={() => this.showDetail(true)}>상세보기</Button>
-        {this.state.showDetail && <ViewDetail team={this.props.team.team} team_member={this.props.team.team_member} hideDetail={this.showDetail}/>}
-      </Container>
+      <div id="main_wapper">
+        <div id="main">
+          <div id="content">
+            <div className="card">
+              <div className="card-header">
+                {this.props.team.team.name}
+              </div>
+              <div className="card-content">
+                주제 : {this.props.team.team.subject} <br/>
+                분야 : {this.props.team.team.area} <br/>
+                팀원 : {this.props.team.team_member.length} 명
+              </div>
+              <div className="card-footer">
+                <div className="button-fb" onClick={() => this.showDetail(true)}>
+                <FontAwesomeIcon icon={faSearchPlus}/>&nbsp;&nbsp;자세히 보기
+                </div>
+                <div className="wapper">
+                  시작 : {create_date.getFullYear()}년 {create_date.getMonth() + 1}월 {create_date.getDate()}일 <br/>
+                  진행중
+                </div>
+              </div>
+            </div>
+            {this.state.showDetail && <ViewDetail team={this.props.team.team} team_member={this.props.team.team_member} hideDetail={this.showDetail}/>}
+          </div>
+        </div>
+      </div>
     );
   }
 }
-
-const Container = styled.div`
-  width: 20rem;
-  border-radius: 1rem;
-  border: 1px solid gray;
-  background-color: #000000aa;
-  margin: .5rem;
-  padding: .5rem;
-  color: black;
-  display: inline-block;
-  backdrop-filter: blur(100px);
-  -webkit-backdrop-filter: blur(100px);
-  
-  @media (max-width: 600px) {
-    width: calc(100% - 2rem);
-  }
-`;
-
-const Header = styled.div`
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid gray;
-`;
-
-const Button = styled.button`
-  background-color: #00000000;
-  float: right;
-  padding: .4rem;
-  outline: none;
-  border-radius: .5rem;
-
-  &:active {
-    outline: none;
-  }
-`;
 
 export default Team;
